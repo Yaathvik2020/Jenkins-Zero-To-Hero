@@ -2,9 +2,9 @@ pipeline {
   agent {
     docker {
       image 'yaathvik20/mvn-chinna:v2'
-       //args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
        // docker run -i --rm --name agent1 --init -v agent1-workdir:/home/jenkins/agent jenkins/agent java -jar /usr/share/jenkins/agent.jar -workDir /home/jenkins/agent
-       docker run -it -v "/var/run/docker.sock:/var/run/docker.sock:rw" docker-alpine:latest /bin/sh
+       //docker run -it -v "/var/run/docker.sock:/var/run/docker.sock:rw"
     }
   }
   stages {
