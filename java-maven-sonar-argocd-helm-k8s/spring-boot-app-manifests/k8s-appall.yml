@@ -59,4 +59,4 @@ spec:
             service:
               name: service-2048
               port:
-                number: 8080
+                number: 80
