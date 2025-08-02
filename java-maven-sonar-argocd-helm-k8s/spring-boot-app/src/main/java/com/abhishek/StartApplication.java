@@ -19,7 +19,12 @@ public class StartApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
-        if("nnn".equals("chinn");
     }
-
+@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Same object reference
+        if (obj == null || getClass() != obj.getClass()) return false; // Null or different class
+        MyClass other = (MyClass) obj; // Cast to MyClass
+        return value == other.value && name.equals(other.name); // Compare based on logical attributes
+    }
 }
