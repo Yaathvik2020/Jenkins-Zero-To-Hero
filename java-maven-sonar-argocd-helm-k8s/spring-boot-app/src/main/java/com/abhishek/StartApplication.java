@@ -19,12 +19,20 @@ public class StartApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
+        String str1 = "Hello";
+        String str2 = "Hello";
+        String str3 = new String("Hello"); // Creates a new object in memory
+        String str4 = "World";
+
+        // Comparing content using equals()
+        System.out.println("str1.equals(str2): " + str1.equals(str2)); // true (content is the same)
+        System.out.println("str1.equals(str3): " + str1.equals(str3)); // true (content is the same)
+        System.out.println("str1.equals(str4): " + str1.equals(str4)); // false (content is different)
+
+        // Comparing references using ==
+        System.out.println("str1 == str2: " + (str1 == str2)); // true (string literals often refer to the same object in the string pool)
+        System.out.println("str1 == str3: " + (str1 == str3)); // fal
     }
-@Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; // Same object reference
-        if (obj == null || getClass() != obj.getClass()) return false; // Null or different class
-        MyClass other = (MyClass) obj; // Cast to MyClass
-        return value == other.value && name.equals(other.name); // Compare based on logical attributes
-    }
+
+    
 }
